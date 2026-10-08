@@ -1,0 +1,101 @@
+%{
+  dirty_cpu_schedulers: 4,
+  dirty_io_schedulers: 10,
+  elixir: "1.17.3",
+  journal_mode: :wal,
+  os: {:unix, :linux},
+  otp: "25",
+  reader_counts: [0, 4],
+  repeats: 2,
+  resource_sampling_ms: 50,
+  retries: 0,
+  scenarios: [
+    %{
+      busy_timeout: 2000,
+      mode: :deferred,
+      pause_ms: 0,
+      queue_interval: 1000,
+      queue_target: 50,
+      scenario: "deferred",
+      synchronous: :normal
+    },
+    %{
+      busy_timeout: 2000,
+      mode: :immediate,
+      pause_ms: 0,
+      queue_interval: 1000,
+      queue_target: 50,
+      scenario: "immediate",
+      synchronous: :normal
+    },
+    %{
+      busy_timeout: 2000,
+      mode: :deferred,
+      pause_ms: 5,
+      queue_interval: 1000,
+      queue_target: 50,
+      scenario: "snapshot_window",
+      synchronous: :normal
+    },
+    %{
+      busy_timeout: 2000,
+      mode: :immediate,
+      pause_ms: 5,
+      queue_interval: 1000,
+      queue_target: 50,
+      scenario: "immediate_window",
+      synchronous: :normal
+    },
+    %{
+      busy_timeout: 0,
+      mode: :immediate,
+      pause_ms: 5,
+      queue_interval: 1000,
+      queue_target: 50,
+      scenario: "no_busy_wait",
+      synchronous: :normal
+    },
+    %{
+      busy_timeout: 2000,
+      mode: :immediate,
+      pause_ms: 25,
+      queue_interval: 1000,
+      queue_target: 50,
+      scenario: "slow_transactions",
+      synchronous: :normal
+    },
+    %{
+      busy_timeout: 2000,
+      mode: :immediate,
+      pause_ms: 25,
+      queue_interval: 10,
+      queue_target: 1,
+      scenario: "checkout_overload",
+      synchronous: :normal
+    },
+    %{
+      busy_timeout: 2000,
+      mode: :immediate,
+      pause_ms: 0,
+      queue_interval: 1000,
+      queue_target: 50,
+      scenario: "full_sync",
+      synchronous: :full
+    }
+  ],
+  schedulers: 4,
+  sqlite: "3.53.4",
+  started_at_utc: "2026-10-08T13:44:39.953633Z",
+  timeout_ms: 120000,
+  versions: %{
+    db_connection: "2.10.2",
+    ecto: "3.14.2",
+    ecto_sql: "3.14.0",
+    ecto_sqlite3: "0.25.0",
+    exqlite: "0.42.0"
+  },
+  write_pools: %{pooled: 5, single: 1, writer: 1},
+  writer_counts: [1, 8, 32],
+  writer_read_pool: 4,
+  writes_per_writer: 12
+}

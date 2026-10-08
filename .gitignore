@@ -1,0 +1,29 @@
+/_build/
+/deps/
+/cover/
+/.direnv/
+/.elixir_ls/
+.DS_Store
+__pycache__/
+*.beam
+*.ez
+*.sqlite*
+*.db*
+*.log
+erl_crash.dump
+/results/run-*/
+
+# Defaults
+Thumbs.db
+.env
+.env.local
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Elixir
+/doc/
+/.fetch
+/config/*.secret.exs
+.elixir_ls/

@@ -1,0 +1,25 @@
+Compiling 1 file (.ex)
+Running ExUnit with seed: 114695, max_cases: 8
+
+checkout_overload/single: 8w 2r; ok=6 failed=42/48 sqlite=0 pool=42; read_errors=16 ok_p99_ms=100.0 fail_p99_ms=50.0 mailbox_peak=0; audit=ok
+.external_lock/writer: 4w 2r; ok=0 failed=8/8 sqlite=8 pool=0; read_errors=0 ok_p99_ms= fail_p99_ms=250.0 mailbox_peak=3; audit=ok
+after_external_lock/writer: 1w 0r; ok=1 failed=0/1 sqlite=0 pool=0; read_errors=0 ok_p99_ms=0.5 fail_p99_ms= mailbox_peak=0; audit=ok
+.snapshot_window/pooled: 8w 2r; ok=10 failed=38/48 sqlite=38 pool=0; read_errors=0 ok_p99_ms=25.0 fail_p99_ms=25.0 mailbox_peak=0; audit=ok
+.external_lock/single: 4w 2r; ok=0 failed=8/8 sqlite=8 pool=0; read_errors=0 ok_p99_ms= fail_p99_ms=100.0 mailbox_peak=0; audit=ok
+after_external_lock/single: 1w 0r; ok=1 failed=0/1 sqlite=0 pool=0; read_errors=0 ok_p99_ms=1.0 fail_p99_ms= mailbox_peak=0; audit=ok
+.no_busy_wait/writer: 8w 2r; ok=48 failed=0/48 sqlite=0 pool=0; read_errors=0 ok_p99_ms=100.0 fail_p99_ms= mailbox_peak=7; audit=ok
+.no_busy_wait/single: 8w 2r; ok=48 failed=0/48 sqlite=0 pool=0; read_errors=0 ok_p99_ms=100.0 fail_p99_ms= mailbox_peak=0; audit=ok
+.external_lock/pooled: 4w 2r; ok=0 failed=8/8 sqlite=8 pool=0; read_errors=0 ok_p99_ms= fail_p99_ms=25.0 mailbox_peak=0; audit=ok
+after_external_lock/pooled: 1w 0r; ok=1 failed=0/1 sqlite=0 pool=0; read_errors=0 ok_p99_ms=0.5 fail_p99_ms= mailbox_peak=0; audit=ok
+.checkout_overload/pooled: 8w 2r; ok=31 failed=17/48 sqlite=0 pool=17; read_errors=20 ok_p99_ms=1.0e3 fail_p99_ms=50.0 mailbox_peak=0; audit=ok
+.no_busy_wait/pooled: 8w 2r; ok=4 failed=44/48 sqlite=44 pool=0; read_errors=0 ok_p99_ms=10.0 fail_p99_ms=2.5 mailbox_peak=0; audit=ok
+.snapshot_window/writer: 8w 2r; ok=48 failed=0/48 sqlite=0 pool=0; read_errors=0 ok_p99_ms=50.0 fail_p99_ms= mailbox_peak=7; audit=ok
+.checkout_overload/writer: 8w 2r; ok=48 failed=0/48 sqlite=0 pool=0; read_errors=0 ok_p99_ms=250.0 fail_p99_ms= mailbox_peak=7; audit=ok
+.snapshot_window/single: 8w 2r; ok=48 failed=0/48 sqlite=0 pool=0; read_errors=0 ok_p99_ms=50.0 fail_p99_ms= mailbox_peak=0; audit=ok
+......checkout comparison/direct: ok=3 failures=%{pool: 57} ok_p99_ms=100.0 failure_p99_ms=50.0 mailbox_peak=0; audit=ok
+after checkout overload/direct: ok=1 failures=%{} latency_ms=25.895
+.checkout comparison/writer: ok=60 failures=%{} ok_p99_ms=1.0e3 failure_p99_ms= mailbox_peak=19; audit=ok
+after checkout overload/writer: ok=1 failures=%{} latency_ms=26.043
+....
+Finished in 7.5 seconds (0.00s async, 7.5s sync)
+3 properties, 19 tests, 0 failures
